@@ -11,8 +11,9 @@ public class Hotel {
 	private Scanner scan;
 	private String path;  
 	
+	
 	Hotel () {           
-		this.MAX_ROOM_NUMBER = 20;
+		this.setMAX_ROOM_NUMBER(20);
 		scan = new Scanner(System.in);
         this.path = "/Users/Admin/Desktop/Workspace/HotelReservationSystem/customers.txt";
         rooms = new Room[MAX_ROOM_NUMBER];
@@ -21,13 +22,13 @@ public class Hotel {
 	Hotel (String name, String address, int maxRoomNumber, String path) {
 		this.setHotelName(name);
 		this.setHotelAddress(address);
-		this.MAX_ROOM_NUMBER = maxRoomNumber;
 		this.setPath(path);
+		this.MAX_ROOM_NUMBER = maxRoomNumber;
 		scan = new Scanner(System.in);
-		
 		rooms = new Room[maxRoomNumber];
-	for (int i = 0; i < rooms.length; i++)
-		rooms[i] = new Room(i+1);
+		
+	    for (int i = 0; i < rooms.length; i++)
+		    rooms[i] = new Room(i+1);
 	}
 	
 	public void readDataFromFile() throws IOException {
@@ -176,19 +177,19 @@ public class Hotel {
 		updateCustomersFile();
 	}
 	
-//	public void showAllReservedRoomsInfo() {
-//		int count = 0;
-//		for (int i = 0; i < rooms.length; i++) {
-//			if (!rooms [i].isRoomAvailable()) {
-//				if (count == 0)
-//			    System.out.println("Room Number      Room Type      Customer Name\n");
-//			System.out.println("    " + rooms[i].getRoomNumber() + "              " + rooms [i].getRoomType() + "            " + rooms [i].getCustomerName());
-//				count++;
-//		  }
-//		}
-//		if (count == 0) 
-//			System.out.println("There are no rooms to show.");
-//	}
+	public void showAllReservedRoomsInfo() {
+		int count = 0;
+		for (int i = 0; i < rooms.length; i++) {
+			if (!rooms [i].isRoomAvailable()) {
+				if (count == 0)
+			    System.out.println("Room Number      Room Type      Customer Name\n");
+			System.out.println("    " + rooms[i].getRoomNumber() + "              " + rooms [i].getRoomType() + "            " + rooms [i].getCustomerName());
+				count++;
+		  }
+		}
+		if (count == 0) 
+			System.out.println("There are no rooms to show.");
+	}
 	
 	private boolean checkRoomType(String roomType) {
 		if (roomType.equals("Single") || roomType.equals("Double") || roomType.equals("King") || roomType.equals("Deluxe")) 
@@ -224,36 +225,47 @@ public class Hotel {
 	
     // Setters and getters methods:
 	
-public void setHotelName (String hotelName) {
-this.hotelAddress = hotelName;
-}
+    public void setHotelName (String hotelName) {
+        this.hotelAddress = hotelName;
+    }
 
-public String getHotelName () {
-return hotelName;
-}
+    public String getHotelName () {
+        return hotelName;
+    }
 
-public void setHotelAddress(String hotelAddress) {
-this.hotelAddress = hotelAddress;
-}
+    public void setHotelAddress(String hotelAddress) {
+    this.hotelAddress = hotelAddress;
+    }
 
-public String getHotelAddress () {
-return hotelAddress;
-}
-
-public void setFilePath(String path) {
-	this.path = path;
-}
-
-public void setPath (String path) {
-	if (path instanceof String)
+	public String getHotelAddress () {
+	    return hotelAddress;
+	}
+	
+	public int getMAX_ROOM_NUMBER() {
+		return MAX_ROOM_NUMBER;
+	}
+	
+	public void setMAX_ROOM_NUMBER(int MAX_ROOM_NUMBER) {
+		if (MAX_ROOM_NUMBER < 20 || MAX_ROOM_NUMBER > 30)
+			System.out.println("Invalid number. The valid range is 20-30.");
+		else
+			this.MAX_ROOM_NUMBER = MAX_ROOM_NUMBER;
+	}
+	
+	public void setFilePath(String path) {
 		this.path = path;
-	else
-		throw new IllegalArgumentException("Invalid data type. String type expected.");
-}
+	}
+	
+	public void setPath (String path) {
+		if (path instanceof String)
+			this.path = path;
+		else
+			throw new IllegalArgumentException("Invalid data type. String type expected.");
+	}
 
-public String getPath() {
-	return path;
-}
+	public String getPath() {
+		return path;
+	}
 
 	
 }

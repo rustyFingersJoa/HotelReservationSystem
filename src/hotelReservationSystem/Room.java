@@ -7,11 +7,11 @@ public class Room {
 	private boolean isRoomAvailable;
 	private String customerName;
 
-	public Room () {                     // No-arg const.
+	public Room () {                     
 		this.isRoomAvailable = true;
 	}
 	
-	public Room (int roomNumber) {       // Const. with args.
+	public Room (int roomNumber) {       
 		this.setRoomNumber(roomNumber);
 		this.isRoomAvailable = true;
 	}

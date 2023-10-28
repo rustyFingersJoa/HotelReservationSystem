@@ -1,13 +1,12 @@
 package hotelReservationSystem;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Driver {
 
 	public static void main(String[] args) throws IOException {
 		
-		Scanner scan = new Scanner(System.in);
-		Hotel hotel = new Hotel("King David", "Jerusalem", 20, "/Users/Admin/Desktop/Workspace/HotelReservationSystem/Test.txt");
+		java.util.Scanner scan = new java.util.Scanner(System.in);
+		Hotel hotel = new Hotel("Olive Garden", "Jerusalem", 20, "/Users/Admin/Desktop/Workspace/HotelReservationSystem/Test.txt");
 		int methodOfChoice = 0;
 	                         
 		while (methodOfChoice != 6) {	
