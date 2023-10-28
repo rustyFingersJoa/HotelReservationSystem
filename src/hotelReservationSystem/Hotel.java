@@ -15,8 +15,8 @@ public class Hotel {
 	Hotel () {           
 		this.setMAX_ROOM_NUMBER(20);
 		scan = new Scanner(System.in);
-        this.path = "/Users/Admin/Desktop/Workspace/HotelReservationSystem/customers.txt";
-        rooms = new Room[MAX_ROOM_NUMBER];
+                this.path = "/Users/Admin/Desktop/Workspace/HotelReservationSystem/customers.txt";
+                rooms = new Room[MAX_ROOM_NUMBER];
 	}
 	
 	Hotel (String name, String address, int maxRoomNumber, String path) {
