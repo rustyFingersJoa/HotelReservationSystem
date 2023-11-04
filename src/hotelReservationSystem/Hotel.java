@@ -23,7 +23,7 @@ public class Hotel {
 		this.setHotelName(name);
 		this.setHotelAddress(address);
 		this.setPath(path);
-		this.MAX_ROOM_NUMBER = maxRoomNumber;
+		this.setMAX_ROOM_NUMBER(maxRoomNumber);
 		scan = new Scanner(System.in);
 		rooms = new Room[maxRoomNumber];
 		
